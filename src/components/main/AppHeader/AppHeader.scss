@@ -1,0 +1,19 @@
+.header {
+  border: $app__border_block solid $app__color_primary;
+  border-top: none;
+  border-left: none;
+  font-size: $app__font_size-big;
+
+  @include flex-center;
+  justify-content: flex-end;
+
+  &__content {
+    @include flex-center;
+    gap: 10px;
+  }
+}
+
+.icons-primary {
+  color: $app__color_primary;
+  font-size: $app__icon_size;
+}

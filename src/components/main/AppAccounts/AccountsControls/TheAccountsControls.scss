@@ -1,0 +1,22 @@
+.app__controls {
+  @include flex-vertical-center;
+  gap: $app__padd;
+  height: 3rem;
+
+  &_btn {
+    @include round_block(calc($app__icon_size * 1.5));
+    font-size: $app__font_size-big;
+    background: $app__color_primary-light !important;
+    color: $app__color_light;
+
+    transition: background 0.3s ease-in-out;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    -ms-transition: background 0.3s ease-in-out;
+    -o-transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: $app__color_primary !important;
+    }
+  }
+}

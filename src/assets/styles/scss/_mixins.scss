@@ -32,3 +32,10 @@
   @include square_block($side);
   border-radius: 50%;
 }
+
+@mixin btn-default {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
