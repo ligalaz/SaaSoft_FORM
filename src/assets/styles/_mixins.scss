@@ -1,0 +1,34 @@
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-space {
+  @include flex-vertical-center;
+  justify-content: space-between;
+}
+
+@mixin flex-horizontal-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-center {
+  @include flex-vertical-center;
+  @include flex-horizontal-center;
+}
+
+@mixin square_block($side) {
+  width: $side;
+  height: $side;
+}
+
+@mixin round_block($side) {
+  @include square_block($side);
+  border-radius: 50%;
+}
