@@ -33,22 +33,20 @@ watch(
     top: 0;
     left: 0;
     z-index: 10;
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     width: 100%;
     height: 100vh;
 
-    background: #fff;
+    background: $app__color_light;
   }
 
   &__body {
     width: 70px;
     height: 70px;
 
-    border: 5px dotted $app-primary;
+    border: 5px dotted $app__color_primary;
     border-radius: 100%;
 
     animation: run-loader 4s linear infinite;
@@ -61,7 +59,7 @@ watch(
 }
 
 .body_dark .loader__container {
-  background: $dark-theme_bg !important;
+  background: $app__color_dark !important;
 }
 
 @keyframes run-loader {

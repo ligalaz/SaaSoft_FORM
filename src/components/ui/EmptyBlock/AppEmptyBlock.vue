@@ -20,8 +20,8 @@ const props = defineProps<{
   @include flex-center;
 
   &__text {
-    font-size: 1.25rem;
-    line-height: 1.4rem;
+    font-size: $app__font_size-big;
+    line-height: $app__font_size-big;
     font-weight: bold;
   }
 }

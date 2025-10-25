@@ -3,19 +3,7 @@
     :id="new Date().getTime() + '_table'"
     :class="['accounts-table app-table', props.tableClName || '']"
   >
-    <div
-      :class="[
-        'app-table__header app-table__header_primary app-table_grid-resolutions',
-      ]"
-    >
-      <div
-        :key="idx + header"
-        class="app-table__header-item"
-        v-for="(header, idx) in props.headers"
-      >
-        {{ header }}
-      </div>
-    </div>
+    <TheAccountsHeader :headers="headers" />
     <div
       :class="[
         'app-table__body',
@@ -38,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import TheAccountsHeader from "./AccountsHeader/TheAccountsHeader.vue";
 import TheAccountsLine from "./AccountsLine/TheAccountsLine.vue";
 import AppEmptyBlock from "@/components/ui/EmptyBlock/AppEmptyBlock.vue";
 

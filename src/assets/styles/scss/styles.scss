@@ -41,8 +41,7 @@
   &__footer {
     flex-shrink: 0;
     height: calc($app__padd * 6);
-    display: flex;
-    align-items: center;
+    @include flex-horizontal-center;
   }
 
   &__btn {

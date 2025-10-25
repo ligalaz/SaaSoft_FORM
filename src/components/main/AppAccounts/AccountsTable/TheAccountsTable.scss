@@ -18,8 +18,8 @@
       border-top: none;
       border-bottom-right-radius: $app__radius_big;
       border-bottom-left-radius: $app__radius_big;
-      min-height: 60px;
-      max-height: 500px;
+      min-height: calc($app__padd * 6);
+      max-height: calc($app__padd * 50);
       overflow-y: auto;
 
       &_empty {
@@ -35,23 +35,23 @@
     &__line {
       display: grid;
       background: $app__color_light;
-      border-bottom: 2px solid $app__color_field;
+      border-bottom: $app__border_standard solid $app__color_field;
 
       &-item {
         @include flex-center;
-        min-height: 40px;
+        min-height: calc($app__padd * 4);
 
         font-family: $app__font_field;
         text-align: center;
         font-size: $app__font_size-standard;
-        line-height: 10px;
+        line-height: $app__padd;
       }
     }
 
     &__header {
       padding-right: $app__scroll_size;
 
-      border: 2px solid $app__color_field;
+      border: $app__border_standard solid $app__color_field;
       border-top-right-radius: $app__radius_big;
       border-top-left-radius: $app__radius_big;
 
@@ -63,7 +63,7 @@
 
     &__line {
       cursor: pointer;
-      border: 2px solid transparent;
+      border: $app__border_standard solid transparent;
       margin-bottom: $app__padd;
 
       &_selected {
