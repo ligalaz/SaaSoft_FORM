@@ -42,6 +42,7 @@
           @blur="handleSave"
           :placeholder="Consts.defaultPlaceholder"
           type="text"
+          :maxlength="Consts.maxLoginLength"
           v-model="account.login"
         />
       </AppField>
@@ -54,6 +55,7 @@
         <input
           @blur="handleSave"
           :type="showPassword ? 'text' : 'password'"
+          :maxlength="Consts.maxPasswordLength"
           v-model="account.password"
         />
         <span

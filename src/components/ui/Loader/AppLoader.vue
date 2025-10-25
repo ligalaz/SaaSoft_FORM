@@ -26,7 +26,7 @@ watch(
 
 <style lang="scss">
 .loader {
-  font-family: $app-font__main;
+  font-family: $app__font_main;
 
   &__container {
     position: fixed;
@@ -43,8 +43,8 @@ watch(
   }
 
   &__body {
-    width: 70px;
-    height: 70px;
+    width: calc($app__padd * 7);
+    height: calc($app__padd * 7);
 
     border: 5px dotted $app__color_primary;
     border-radius: 100%;
@@ -53,13 +53,14 @@ watch(
   }
 
   &__message {
-    font-size: $app-font__size_big;
-    color: $app-primary;
+    font-size: $app__font_size-big;
+    color: $app__color_primary;
   }
 }
 
-.body_dark .loader__container {
+.loader__container {
   background: $app__color_dark !important;
+  opacity: 0.97;
 }
 
 @keyframes run-loader {

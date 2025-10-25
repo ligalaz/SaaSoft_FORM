@@ -23,17 +23,26 @@
       />
     </div>
   </div>
+  <Teleport to="body">
+    <AppLoader
+      content=""
+      :is-loading="!isLoading"
+      v-if="!isLoading"
+      cl-name=""
+    />
+  </Teleport>
 </template>
 
 <script setup lang="ts">
 import TheAccountsHeader from "./AccountsHeader/TheAccountsHeader.vue";
 import TheAccountsLine from "./AccountsLine/TheAccountsLine.vue";
 import AppEmptyBlock from "@/components/ui/EmptyBlock/AppEmptyBlock.vue";
+import AppLoader from "@/components/ui/Loader/AppLoader.vue";
 
 import { useAccountsStore } from "@/store/accounts/accounts";
 import type { AppHeadersType } from "@/types/types";
 import { doResizeTable } from "@/utils/hooks";
-import { onMounted, onUpdated } from "vue";
+import { onMounted, onUpdated, ref } from "vue";
 
 const props = defineProps<{
   tableClName: string;
@@ -42,12 +51,15 @@ const props = defineProps<{
 }>();
 
 const store = useAccountsStore();
+const isLoading = ref(false);
 
 onMounted(() => {
   doResizeTable(props.windowResolutionClasses || [], 50);
   window.addEventListener("resize", () =>
     doResizeTable(props.windowResolutionClasses || [], 50),
   );
+
+  setTimeout(() => (isLoading.value = true), 300);
 });
 onUpdated(() => doResizeTable(props.windowResolutionClasses || [], 50));
 </script>

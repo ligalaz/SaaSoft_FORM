@@ -61,8 +61,6 @@ export function doResizeTable(
     sum -
     averageMargin;
 
-  console.log("res", result);
-
   // Учитывает если таблица скроллится, то добавит отступ справа в голове таблицы
   body && tHeader && body?.scrollHeight > body.clientHeight
     ? (tHeader.style.paddingRight = `15px`)
