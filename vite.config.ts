@@ -1,7 +1,21 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vitest/config";
+import vue from "@vitejs/plugin-vue";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-})
+  test: {
+    globals: true,
+    environment: "happy-dom",
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+                            @use "@/assets/styles/scss/_resets" as *;
+                            @use "@/assets/styles/scss/_mixins" as *;
+                            @use "@/assets/styles/scss/_variables" as *;
+                          `,
+      },
+    },
+  },
+});
