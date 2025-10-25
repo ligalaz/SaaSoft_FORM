@@ -1,3 +1,5 @@
+import { nextTick } from "vue";
+
 // Базовая здаержка для пользовательских ивентов
 export function doDebounced<F extends (...args: any[]) => void>(
   func: F,
@@ -79,4 +81,10 @@ export function doStorageGet(storage: Storage, key: string, defValue: any) {
 export function doStorageSave(storage: Storage, key: string, data: any) {
   const value = typeof data === "object" ? JSON.stringify(data) : data;
   storage.setItem(key, value);
+}
+
+export async function initMSelect() {
+  await nextTick();
+  const elems = document.querySelectorAll("select");
+  M.FormSelect.init(elems);
 }

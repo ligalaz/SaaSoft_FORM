@@ -19,18 +19,19 @@
     <div
       :class="[
         'app-table__body',
-        { 'app-table__body_empty': !props.accounts || !props.accounts.length },
+        { 'app-table__body_empty': !store?.accounts?.length },
       ]"
     >
       <TheAccountsLine
-        :accounts="props.accounts"
-        v-if="props.accounts && props.accounts.length"
+        :key="acc.id"
+        :account="acc"
+        v-for="acc in store.accounts"
       />
       <AppEmptyBlock
         empty-message="Учётные записи отсутствуют"
         cl-name="app-table__body_empty-message"
         text-cl-name=""
-        v-else
+        v-if="!store?.accounts.length"
       />
     </div>
   </div>
@@ -39,15 +40,17 @@
 <script setup lang="ts">
 import TheAccountsLine from "./AccountsLine/TheAccountsLine.vue";
 import AppEmptyBlock from "@/components/ui/EmptyBlock/AppEmptyBlock.vue";
-import type { IAccount } from "@/types/interfaces";
+
+import { useAccountsStore } from "@/store/accounts/accounts";
 import type { AppHeadersType } from "@/types/types";
 
 const props = defineProps<{
   tableClName: string;
   headers: AppHeadersType;
-  accounts: Array<IAccount>;
   windowResolutionClasses: Array<string>;
 }>();
+
+const store = useAccountsStore();
 </script>
 
 <style lang="scss" src="./TheAccountsTable.scss"></style>

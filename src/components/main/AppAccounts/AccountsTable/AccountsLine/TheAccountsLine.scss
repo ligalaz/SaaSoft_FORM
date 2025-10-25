@@ -1,4 +1,14 @@
 select,
+input {
+  font-size: $app__font_size-small !important;
+  font-family: $app__font_field;
+
+  &::placeholder {
+    font-family: $app__font_field;
+  }
+}
+
+select,
 select:focus,
 .select-wrapper input.select-dropdown {
   border-bottom: none !important;

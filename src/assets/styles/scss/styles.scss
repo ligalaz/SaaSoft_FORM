@@ -50,4 +50,14 @@
     @include flex-center;
     text-align: center;
   }
+
+  &__icons {
+    &_primary {
+      color: $app__color_primary;
+    }
+
+    &_error {
+      color: $app__color_error;
+    }
+  }
 }

@@ -2,7 +2,9 @@
   <div class="app__controls">
     <div class="app__controls_host app__controls_block">
       <h5 class="app__description app__controls_desc">Учётные записи</h5>
-      <button class="app__btn app__controls_btn">+</button>
+      <button @click="createAccount" class="app__btn app__controls_btn">
+        +
+      </button>
     </div>
     <div class="app__controls_label-info app__controls_block">
       <p class="app__controls_info">
@@ -16,6 +18,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAccountsStore } from "@/store/accounts/accounts";
+const { createAccount } = useAccountsStore();
+</script>
 
 <style lang="scss" src="./TheAccountsControls.scss"></style>

@@ -9,11 +9,10 @@
 
   &__content {
     @include flex-center;
-    gap: 10px;
+    gap: $app__padd;
   }
 }
 
-.icons-primary {
-  color: $app__color_primary;
+.header-icons {
   font-size: $app__icon_size;
 }

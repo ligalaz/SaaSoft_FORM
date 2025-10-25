@@ -1,7 +1,8 @@
 import M from "materialize-css";
 
 export const ErrorToastClName = "red";
-export const CreateToastClName = "light_blue";
+export const DeleteToastClNAme = "yellow";
+export const CreateToastClName = "blue";
 export const SaveToastClNAme = "green";
 
 export function showNotification(type: string, delay = 3000) {
@@ -18,6 +19,9 @@ export function showNotification(type: string, delay = 3000) {
       break;
     case SaveToastClNAme:
       message = "Учётная запись сохранена!";
+      break;
+    case DeleteToastClNAme:
+      message = "Учётная запись удалена!";
       break;
     default:
       break;
