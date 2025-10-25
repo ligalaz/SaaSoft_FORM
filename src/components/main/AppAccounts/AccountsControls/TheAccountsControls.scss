@@ -1,7 +1,24 @@
 .app__controls {
-  @include flex-vertical-center;
-  gap: $app__padd;
-  height: 3rem;
+  &_block:first-child {
+    margin-bottom: $app__padd;
+  }
+
+  &_host {
+    @include flex-vertical-center;
+    gap: $app__padd;
+  }
+
+  &_desc {
+    font-weight: 700;
+  }
+
+  &_info {
+    @include flex-vertical-center;
+    gap: $app__padd;
+    padding: $app__padd;
+    color: $app__color_light;
+    background: $app__color_primary;
+  }
 
   &_btn {
     @include round_block(calc($app__icon_size * 1.5));

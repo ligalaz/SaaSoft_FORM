@@ -5,3 +5,4 @@ export type AppLabelType = {
 };
 export type AppAccountType = AppAccountTypeEnum.LDAP | AppAccountTypeEnum.LOCAL;
 export type AppStringOptType = string | null;
+export type AppHeadersType = Array<string>;
