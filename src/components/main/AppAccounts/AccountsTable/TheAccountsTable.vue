@@ -43,6 +43,8 @@ import AppEmptyBlock from "@/components/ui/EmptyBlock/AppEmptyBlock.vue";
 
 import { useAccountsStore } from "@/store/accounts/accounts";
 import type { AppHeadersType } from "@/types/types";
+import { doResizeTable } from "@/utils/hooks";
+import { onMounted, onUpdated } from "vue";
 
 const props = defineProps<{
   tableClName: string;
@@ -51,6 +53,14 @@ const props = defineProps<{
 }>();
 
 const store = useAccountsStore();
+
+onMounted(() => {
+  doResizeTable(props.windowResolutionClasses || [], 50);
+  window.addEventListener("resize", () =>
+    doResizeTable(props.windowResolutionClasses || [], 50),
+  );
+});
+onUpdated(() => doResizeTable(props.windowResolutionClasses || [], 50));
 </script>
 
 <style lang="scss" src="./TheAccountsTable.scss"></style>

@@ -15,7 +15,7 @@ const props = defineProps<{
   width: 100%;
   height: 100%;
   @include flex-center;
-  overflow: visible;
+  overflow: auto;
 
   border-radius: $app__radius_standard;
 

@@ -20,6 +20,7 @@
       border-bottom-left-radius: $app__radius_big;
       min-height: 60px;
       max-height: 500px;
+      overflow-y: auto;
 
       &_empty {
         @include flex-center;

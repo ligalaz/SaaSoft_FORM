@@ -4,14 +4,12 @@
     <TheAccountsTable
       table-cl-name=""
       :headers="headers"
-      :accounts="accounts"
-      :window-resolution-classes="[]"
+      :window-resolution-classes="['.app__controls']"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { AppAccountTypeEnum } from "@/types/enums";
 import TheAccountsControls from "../main/AppAccounts/AccountsControls/TheAccountsControls.vue";
 import TheAccountsTable from "../main/AppAccounts/AccountsTable/TheAccountsTable.vue";
 
