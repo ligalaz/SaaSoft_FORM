@@ -1,0 +1,20 @@
+.footer {
+  border: $app__border_block solid $app__color_primary;
+  border-bottom: none;
+  border-right: none;
+  font-size: $app__font_size-big;
+
+  &__content {
+    width: 100%;
+    @include flex-space;
+  }
+
+  &__link {
+    @include flex-center;
+    color: $app__color_primary;
+  }
+
+  &__author address {
+    text-align: center;
+  }
+}

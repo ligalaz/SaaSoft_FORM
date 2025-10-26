@@ -1,0 +1,62 @@
+.app {
+  height: 100%;
+  font-family: $app__font_main;
+  font-size: $app__font_size-standard;
+  color: $app__color_dark;
+
+  &-accounts {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    padding: $app__padd;
+  }
+
+  &-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 calc($app__padd * 2);
+    box-sizing: border-box;
+  }
+
+  &__header {
+    flex-shrink: 0;
+    height: calc($app__padd * 6);
+    display: flex;
+    align-items: center;
+  }
+
+  &-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    height: calc($app__padd * 6);
+    @include flex-horizontal-center;
+  }
+
+  &__btn {
+    @include btn-default;
+    @include flex-center;
+    text-align: center;
+  }
+
+  &__icons {
+    &_primary {
+      color: $app__color_primary;
+    }
+
+    &_error {
+      color: $app__color_error;
+    }
+  }
+}
