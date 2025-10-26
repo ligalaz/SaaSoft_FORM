@@ -7,7 +7,7 @@
 ## Деплой
 
 - **GitHub Pages:** <a href="https://ligalaz.github.io/SaaSoft_FORM/" target="_blank">Ссылка</a>
-- **Netlify:** <a href="https://404.netlify.app" target="_blank">Ссылка</a>
+- **Netlify:** <a href="https://playful-gumption-1f6382.netlify.app/" target="_blank">Ссылка</a>
 
 ## Локальный запуск
 
